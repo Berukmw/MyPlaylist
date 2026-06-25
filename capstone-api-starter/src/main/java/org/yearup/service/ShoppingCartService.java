@@ -74,6 +74,11 @@ public class ShoppingCartService
             shoppingCartRepository.save(existing);
         }
     }
+    public void removeProduct(int userId, int productId)
+    {
+        // just deletes that one row, nothing else in the cart gets touched
+        shoppingCartRepository.deleteByUserIdAndProductId(userId, productId);
+    }
 
     public void clearCart(int userId)
     {

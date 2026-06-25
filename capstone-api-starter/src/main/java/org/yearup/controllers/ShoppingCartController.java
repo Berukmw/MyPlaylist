@@ -77,4 +77,17 @@ public class ShoppingCartController
         // cart's empty now but still sending it back so the front end has something to refresh with
         return shoppingCartService.getByUserId(userId);
     }
+
+    @DeleteMapping("products/{productId}")
+    public ShoppingCart removeProduct(@PathVariable int productId, Principal principal)
+    {
+        String userName = principal.getName();
+        User user = userService.getByUserName(userName);
+        int userId = user.getId();
+
+        shoppingCartService.removeProduct(userId, productId);
+
+        // send back the updated cart so the page can refresh and show it's gone
+        return shoppingCartService.getByUserId(userId);
+    }
 }

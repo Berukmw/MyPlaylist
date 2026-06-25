@@ -17,4 +17,7 @@ public interface ShoppingCartRepository extends JpaRepository<CartItem, Integer>
    // this is what was causing the 500 on delete /cart
     @Transactional
     void deleteByUserId(int userId);
+    // finds the exact row for "this user, this product" so we can delete just that one
+    @Transactional
+    void deleteByUserIdAndProductId(int userId, int productId);
 }
