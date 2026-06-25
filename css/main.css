@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geo&display=swap');
 header
 {
     display: flex;
@@ -57,6 +58,10 @@ header .cart #cart-items
     height: 50%;
     align-items: start;
     padding-left: 5px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Audiowide', sans-serif;
 }
 
 main
@@ -156,6 +161,9 @@ main > .content-form .cart-item
     width:100%;
 }
 
+body {
+    font-family: 'Geo', sans-serif;
+}
 .product > .add-button
 {
     display: flex;
