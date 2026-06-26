@@ -47,6 +47,7 @@ class ProductService {
 
     hasPhoto(photo){
         return this.photos.filter(p => p == photo).length > 0;
+
     }
 
     addCategoryFilter(cat)
